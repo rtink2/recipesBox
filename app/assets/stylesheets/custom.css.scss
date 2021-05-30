@@ -1,2 +1,58 @@
-@import 'bootstrap';
+@import 'bootstrap/dist/css/bootstrap';
 
+.center {
+  text-align: center;
+}
+
+.cover {
+  background-image: asset-url('recipe-background.jpeg');
+  background-size: cover;
+  height: 300px;
+}
+
+.cover h1, h2 {
+  color: rgb(153, 63, 63);
+  text-align: center;
+  margin-bottom: 30px;
+  letter-spacing: -1px;
+  font-weight: bold;
+}
+
+.btn-custom {
+  background-color: #eb9553;
+}
+
+.btn-custom:hover {
+  background-color: rgb(153, 63, 63);
+  text-decoration: none;
+}
+
+#logo {
+  float: left;
+  font-size: 1.7em;
+  color: rgb(153, 63, 63);
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  font-weight: bold;
+}
+
+#logo:hover {
+  color: rgb(241, 106, 106);
+  text-decoration: none;
+}
+
+footer {
+  background-color: #eb9553;
+}
+
+.link-spec {
+  color: rgb(153, 63, 63);
+  text-decoration: none;
+  text-transform: uppercase;
+  float: left;
+}
+
+.link-spec:hover {
+  color: rgb(241, 106, 106);
+  text-decoration: none;
+}
