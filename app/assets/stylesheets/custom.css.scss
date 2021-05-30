@@ -10,7 +10,15 @@
   height: 300px;
 }
 
-.cover h1, h2 {
+.cover h1 {
+  color: rgb(153, 63, 63);
+  text-align: center;
+  margin-bottom: 30px;
+  letter-spacing: -1px;
+  font-weight: bold;
+}
+
+.cover h2 {
   color: rgb(153, 63, 63);
   text-align: center;
   margin-bottom: 30px;
@@ -49,7 +57,11 @@ footer {
   color: rgb(153, 63, 63);
   text-decoration: none;
   text-transform: uppercase;
-  float: left;
+}
+
+footer ul {
+  float: right;
+  list-style: none;
 }
 
 .link-spec:hover {
