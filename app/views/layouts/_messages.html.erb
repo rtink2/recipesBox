@@ -1,0 +1,12 @@
+<div class="row mx-auto" style="width: 50%;">
+  <div class="col text-center">
+    <% flash.each do |name, msg| %>
+      <div class="alert alert-dismissible fade show alert-<%= name %>" role="alert">
+        <%= msg %>
+        <a href="#" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </a>
+      </div>
+    <% end %>
+  </div>
+</div>
