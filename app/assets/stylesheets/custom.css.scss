@@ -8,74 +8,71 @@
   background-image: asset-url('recipe-background.jpeg');
   background-size: cover;
   height: 300px;
-}
-
-.cover h1 {
-  color: rgb(153, 63, 63);
-  text-align: center;
-  margin-bottom: 30px;
-  letter-spacing: -1px;
-  font-weight: bold;
-}
-
-.cover h2 {
-  color: rgb(153, 63, 63);
-  text-align: center;
-  margin-bottom: 30px;
-  letter-spacing: -1px;
-  font-weight: bold;
+  h1 {
+    color: #4e878c;
+    text-align: center;
+    margin-bottom: 30px;
+    letter-spacing: -1px;
+    font-weight: bold;
+  }
+  h2 {
+    color: #4e878c;
+    text-align: center;
+    margin-bottom: 30px;
+    letter-spacing: -1px;
+    font-weight: bold;
+  }
 }
 
 .btn-custom {
-  background-color: #eb9553;
+  background-color: #4e878c;
 }
 
 .btn-custom:hover {
-  background-color: rgb(153, 63, 63);
+  background-color: #65b891;
   text-decoration: none;
 }
 
 #logo {
   float: left;
   font-size: 1.7em;
-  color: rgb(153, 63, 63);
+  color: #4e878c;
   text-transform: uppercase;
   letter-spacing: -1px;
   font-weight: bold;
 }
 
 #logo:hover {
-  color: rgb(241, 106, 106);
+  color: #65b891;
   text-decoration: none;
 }
 
 footer {
-  background-color: #ee7f7f;
-}
-
-footer ul {
-  float: right;
+  background-color: #93e5ab;
+  ul {
+    float: right;
   list-style: none;
+  }
 }
 
 .link-spec {
-  color: rgb(153, 63, 63);
+  color: #4e878c;
   text-decoration: none;
   text-transform: uppercase;
 }
 
 .link-spec:hover {
-  color: rgb(241, 106, 106);
+  color: #65b891;
   text-decoration: none;
 }
 
 .cancel {
-  color: rgb(153, 63, 63);
+  color: #4e878c;
   text-decoration: none;
 }
 
 .cancel:hover {
-  color: rgb(241, 106, 106);
+  color: #65b891;
   text-decoration: none;
 }
 
@@ -85,18 +82,18 @@ footer ul {
 }
 
 .card a {
-  color: rgb(241, 106, 106);
+  color: #4e878c;
   text-decoration: none;
   text-transform: capitalize;
 }
 
 .card a:hover {
-  color: rgb(153, 63, 63);
+  color: #65b891;
   text-decoration: none;
 }
 
 .name {
-  color: rgb(153, 63, 63);
+  color: #4e878c;
   text-transform: capitalize;
 }
 
@@ -110,6 +107,22 @@ footer ul {
 
 .close {
   float: right;
-  color: rgb(153, 63, 63);
+  color: #4e878c;
   text-decoration: none;
+}
+
+.recipe-actions {
+  padding-top: 55px;
+  a {
+    color: black;
+  }
+  a:hover {
+    color: whitesmoke;
+  }
+  .btn-edit-spec {
+    background-color: #cbff4d;
+  }
+  .btn-edit-spec:hover {
+    background-color: #84dd63;
+  }
 }
