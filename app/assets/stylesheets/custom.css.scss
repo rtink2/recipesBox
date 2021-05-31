@@ -50,7 +50,12 @@
 }
 
 footer {
-  background-color: #eb9553;
+  background-color: #ee7f7f;
+}
+
+footer ul {
+  float: right;
+  list-style: none;
 }
 
 .link-spec {
@@ -59,12 +64,46 @@ footer {
   text-transform: uppercase;
 }
 
-footer ul {
-  float: right;
-  list-style: none;
-}
-
 .link-spec:hover {
   color: rgb(241, 106, 106);
   text-decoration: none;
+}
+
+.cancel {
+  color: rgb(153, 63, 63);
+  text-decoration: none;
+}
+
+.cancel:hover {
+  color: rgb(241, 106, 106);
+  text-decoration: none;
+}
+
+
+.description {
+  margin-top: 0;
+}
+
+.card a {
+  color: rgb(241, 106, 106);
+  text-decoration: none;
+  text-transform: capitalize;
+}
+
+.card a:hover {
+  color: rgb(153, 63, 63);
+  text-decoration: none;
+}
+
+.name {
+  color: rgb(153, 63, 63);
+  text-transform: capitalize;
+}
+
+.chef_info {
+  margin-top: 10px;
+}
+
+.error-card {
+  background-color: #f1a19f;
 }
