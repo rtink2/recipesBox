@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #93e5ab;">
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #ffe0b5;">
   <div class="container-fluid">
     <%= link_to 'RecipeBox', root_path, class: 'navbar-brand', id: 'logo' %>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -17,7 +17,9 @@
             <li>
               <%= link_to 'Create Recipe', new_recipe_path, class: "dropdown-item" %>
             </li>
-            <li><a class="dropdown-item" href="#">All Recipes</a></li>
+            <li>
+              <%= link_to 'All Recipes', recipes_path, class: "dropdown-item" %>
+            </li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="#">Something else here</a></li>
           </ul>
@@ -32,7 +34,7 @@
           <a class="nav-link" href="#">Login</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Sign Up</a>
+          <%= link_to 'Sign up', signup_path, class: "nav-link" %>
         </li>
       </ul>
     </div>
