@@ -1,1 +1,3 @@
-<%= render 'shared/page_title', title: 'Your Profile' %>
+<%= render 'shared/page_title', title: "Chef #{@chef.chefname}'s recipes" %>
+
+<%= render 'recipes/recipe', obj: @chef.recipes %>
