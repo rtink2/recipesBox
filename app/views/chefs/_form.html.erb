@@ -1,0 +1,33 @@
+<%= render 'shared/errors', obj: @chef %>
+
+<div class="row mt-5">
+    <%= form_for(@chef, :html => {class: "form-horizontal", role: "form"}) do |f| %>
+      <div class="form-group mb-3">
+        <div class="col-sm-12">
+          <%= f.text_field :chefname, class: "form-control", placeholder: "Choose Chefname", autofocus: true %>
+        </div>
+      </div>
+      <div class="form-group mb-3">
+        <div class="col-sm-12">
+          <%= f.email_field :email, class: "form-control", placeholder: "Enter your email" %>
+        </div>
+      </div>
+      <div class="form-group mb-3">
+        <div class="col-sm-12">
+          <%= f.password_field :password, class: "form-control", placeholder: "Choose a password" %>
+        </div>
+      </div>
+      <div class="form-group mb-3">
+        <div class="col-sm-12">
+          <%= f.password_field :password_confirmation, class: "form-control", placeholder: "Confirm password" %>
+        </div>
+      </div>
+      <div class="col-md-offset-2 col-md-10">
+        <%= f.submit(@chef.new_record? ? "Create Account" : "Update Account",
+                    class: "btn btn-warning btn-sm btn-custom") %>
+      </div>
+    <% end %>
+    <div class="col-md-6 col-md-offset-6">
+      [<%= link_to "Cancel request and return to all recipes", recipes_path, class: "cancel" %>]
+    </div>
+</div>
