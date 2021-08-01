@@ -1,0 +1,21 @@
+<%= render 'shared/page_title', title: 'showing all chefs' %>
+
+<div class='d-flex justify-content-center'>
+    <%= will_paginate %>
+</div>
+<div class="row">
+    <div class='align-item-center'>
+        <% @chefs.each do |chef| %>
+            <ul class='listing'>
+                <div class="card text-dark bg-light mb-3 p-1 text-center">
+                    <li><%= link_to gravatar_for(chef), chef_path(chef) %></li>
+                    <li class='chef-title card-title'><%= link_to chef.chefname.capitalize, chef_path(chef) %></li>
+                    <li class='card-text'><small><%= pluralize(chef.recipes.count, 'recipe') if chef.recipes %></small></li>
+                </div>
+            </ul>
+        <% end %>
+        <div class='d-flex justify-content-center'>
+            <%= will_paginate %>
+        </div>
+    </div>
+</div>

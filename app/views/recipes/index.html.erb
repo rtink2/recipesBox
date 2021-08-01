@@ -1,3 +1,9 @@
 <%= render 'shared/page_title', title: 'all recipes' %>
 
+<div class='d-flex justify-content-center'>
+    <%= will_paginate %>
+</div>
 <%= render 'recipe', obj: @recipes %>
+<div class='d-flex justify-content-center'>
+    <%= will_paginate %>
+</div>
