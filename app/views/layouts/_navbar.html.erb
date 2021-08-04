@@ -9,33 +9,50 @@
         <li class='nav-item'>
             <%= link_to 'Chefs', chefs_path, class: 'nav-link' %>
         </li>
+        <li class='nav-item'>
+          <%= link_to 'All Recipes', recipes_path, class: 'nav-link' %>
+      </li>
+      <% if logged_in? %>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Recipes
+            Recipe Actions
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li>
               <%= link_to 'Create Recipe', new_recipe_path, class: "dropdown-item" %>
             </li>
-            <li>
-              <%= link_to 'All Recipes', recipes_path, class: "dropdown-item" %>
-            </li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
           </ul>
         </li>
+      <% end %>
       </ul>
       <form class="d-flex">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-dark btn-sm" type="submit">Search</button>
       </form>
       <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link" href="#">Login</a>
-        </li>
-        <li class="nav-item">
-          <%= link_to 'Sign up', signup_path, class: "nav-link" %>
-        </li>
+        <% if logged_in? %>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <%= current_chef.chefname %>'s Profile
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li>
+                <%= link_to 'View Your Profile', chef_path(current_chef), class: "dropdown-item" %>
+              </li>
+              <li>
+                <%= link_to 'Edit Your Profile', edit_chef_path(current_chef), class: "dropdown-item" %>
+              </li>
+              <li><hr class="dropdown-divider"></li>
+              <li class="nav-item">
+                <%= link_to 'Log Out', logout_path, method: :delete, class: "nav-link" %>
+              </li>
+            </ul>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to 'Log In', login_path, class: "nav-link" %>
+          </li>
+        <% end %>
       </ul>
     </div>
   </div>
