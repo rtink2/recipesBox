@@ -21,7 +21,7 @@
       </p>
     </div>
     <div class="recipe-actions">
-      <% if logged_in? && current_chef == @recipe.chef %>
+      <% if logged_in? && (current_chef == @recipe.chef || current_chef.admin?) %>
         <%= link_to "Edit Recipe", edit_recipe_path(@recipe),
                    class: 'btn btn-sm btn-warning btn-edit-spec' %>
         <%= link_to "Delete Recipe", recipe_path(@recipe), method: :delete,
