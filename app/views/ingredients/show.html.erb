@@ -1,0 +1,13 @@
+<%= render 'shared/page_title', title: "Recipes containing #{@ingredient.name}" %>
+
+<% if @ingredient.recipes.count != 0 %>
+    <div class='d-flex justify-content-center'>
+        <%= will_paginate @ingredient_recipes %>
+    </div>
+    <%= render 'recipes/recipe', obj: @ingredient_recipes %>
+    <div class='d-flex justify-content-center'>
+        <%= will_paginate @ingredient_recipes %>
+    </div>
+<% else %>
+    <h4 align='center'>No recipes yet!</h4>
+<% end %>

@@ -1,9 +1,13 @@
 <%= render 'shared/page_title', title: "Chef #{@chef.chefname}'s recipes" %>
 
-<div class='d-flex justify-content-center'>
-    <%= will_paginate @chef_recipes %>
-</div>
-<%= render 'recipes/recipe', obj: @chef_recipes %>
-<div class='d-flex justify-content-center'>
-    <%= will_paginate @chef_recipes %>
-</div>
+<% if @chef.recipes.count != 0 %>
+    <div class='d-flex justify-content-center'>
+        <%= will_paginate @chef_recipes %>
+    </div>
+    <%= render 'recipes/recipe', obj: @chef_recipes %>
+    <div class='d-flex justify-content-center'>
+        <%= will_paginate @chef_recipes %>
+    </div>
+<% else %>
+    <h4 align='center'>No recipes yet!</h4>
+<% end %>
