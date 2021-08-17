@@ -13,3 +13,14 @@ import "bootstrap"
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+function scrollToBottom() {
+    if($('#messages').length > 0) {
+    $('#messages').animate({
+        scrollTop: $('#messages')[0].scrollHeight
+      }, 800);
+}}
+
+jQuery(function () {
+    scrollToBottom();
+})

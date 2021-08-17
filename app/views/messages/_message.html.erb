@@ -1,0 +1,20 @@
+<div class="message d-grid gap-3">
+    <div class='p-2 bg-light border'>
+        <div class="row">
+        <div class='col-md-6'>
+            <%= gravatar_for(message.chef, size: 30) %>
+            <strong>@<%= message.chef.chefname.capitalize %>: </strong>
+        </div>
+        <div class='col-md-6'>
+            <small style="color: #a4af69;"><em>
+                Created <%= time_ago_in_words(message.created_at) %> ago
+            </em></small>
+        </div>
+    </div>
+        <p>
+            <span class='content'>
+                <%= message.content %>
+            </span>
+        </p>
+    </div>
+</div>
