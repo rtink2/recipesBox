@@ -10,10 +10,11 @@
             <%= link_to 'Chefs', chefs_path, class: 'nav-link' %>
         </li>
         <% if logged_in? %>
-          <li class='nav-item'>
-            <%= link_to 'ChefChat', chat_path, class: 'nav-link' %>
-        </li>
-      <% end %>
+        <li class='nav-item'>
+          <%= link_to "Chef Chat", chat_path, class: 'nav-link' %>
+          </li>
+        <% end %>
+      
         <li class='nav-item'>
           <%= link_to 'All Recipes', recipes_path, class: 'nav-link' %>
       </li>

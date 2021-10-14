@@ -3,7 +3,6 @@ import consumer from "./consumer"
 consumer.subscriptions.create("ChatroomChannel", {
   connected() {
     // Called when the subscription is ready for use on the server
-    scrollToBottom()
   },
 
   disconnected() {
@@ -11,12 +10,9 @@ consumer.subscriptions.create("ChatroomChannel", {
   },
 
   received(data) {
-    // ActionCable.server.broadcast('chatroom_channel', data)
-    // scrollToBottom()
-    // $('#messages').append(data['message'])
-    // $('#message_content').val('')
-    $("#messages").prepend(data)
+    $('#messages').append(data['message'])
+    $('#content').val('')
     scrollToBottom()
-    // Called when there's incoming data on the websocket for this channel
+    return
   }
 });

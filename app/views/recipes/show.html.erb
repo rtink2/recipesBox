@@ -10,30 +10,41 @@
         <p>Ingredients: <%= render @recipe.ingredients %></p>
       <% end %>
       <div class='float-end'>
-        <p class='center'>
-          <em>Created by:</em>
+          <p class='center'>
+            <em>Created by:</em>
+          </p>
+          <p class='center'>
+            <%= link_to gravatar_for(@recipe.chef), chef_path(@recipe.chef) %>
+          </p>
+        <p class='center name'>
+          <small><%= @recipe.chef.chefname %></small>
         </p>
-        <p class='center'>
-          <%= link_to gravatar_for(@recipe.chef), chef_path(@recipe.chef) %>
+        <p class="text-end">
+            <%= time_ago_in_words(@recipe.created_at) %> ago
         </p>
-      <p class='center name'>
-        <small><%= @recipe.chef.chefname %></small>
-      </p>
-      <p class="text-end">
-          <%= time_ago_in_words(@recipe.created_at) %> ago
-      </p>
-    </div>
-    <div class="recipe-actions">
-      <% if logged_in? && (current_chef == @recipe.chef || current_chef.admin?) %>
-        <%= link_to "Edit Recipe", edit_recipe_path(@recipe),
-                   class: 'btn btn-sm btn-warning btn-edit-spec' %>
-        <%= link_to "Delete Recipe", recipe_path(@recipe), method: :delete,
-                  data: { confirm: "Are you sure you want to delete this recipe?"},
-                  class: 'btn btn-sm btn-danger' %>
-      <% end %>
-      <%= link_to "Go To All Recipes", recipes_path,
-                  class: 'btn btn-sm btn-secondary btn-custom' %>
-    </div>
+      </div>
+      <div class="recipe-actions">
+        <% if logged_in? && (current_chef == @recipe.chef || current_chef.admin?) %>
+          <%= link_to "Edit Recipe", edit_recipe_path(@recipe),
+                    class: 'btn btn-sm btn-warning btn-edit-spec' %>
+          <%= link_to "Delete Recipe", recipe_path(@recipe), method: :delete,
+                    data: { confirm: "Are you sure you want to delete this recipe?"},
+                    class: 'btn btn-sm btn-danger' %>
+        <% end %>
+        <%= link_to "Go To All Recipes", recipes_path,
+                    class: 'btn btn-sm btn-secondary btn-custom' %>
+      </div>
+
+      <div class="row">
+        <div class="float-end liking">
+          <%= link_to like_recipe_path(@recipe, like: true), method: :post do %>
+            <i class="fas fa-thumbs-up"></i>
+          <% end %> <%= @recipe.thumbs_up_total %> ||
+          <%= link_to like_recipe_path(@recipe, like: false), method: :post do %>
+            <i class="fas fa-thumbs-down"></i>
+          <% end %> <%= @recipe.thumbs_down_total %>
+        </div>
+
     </div>
   </div>
 </div>
